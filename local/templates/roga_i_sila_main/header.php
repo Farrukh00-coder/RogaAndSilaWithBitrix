@@ -24,6 +24,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/assets/js/script.js');
     <link href="<?=SITE_TEMPLATE_PATH?>/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
+<?php $APPLICATION->ShowPanel()?>
 <div class="wrapper flex flex-1 flex-col">
     <header class="bg-white">
         <div class="border-b">

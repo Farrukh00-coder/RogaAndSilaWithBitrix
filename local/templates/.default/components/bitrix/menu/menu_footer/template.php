@@ -11,11 +11,11 @@
 <?php
 foreach($arResult as $arItem):
 ?>
-    <?php if($arItem['SELECTED']):?>
-		<li><a class="text-orange cursor-default" <?=$arItem['PARAMS']['COLOR'] ? 'style="color: ' . $arItem['PARAMS']['COLOR'] . '"' : ''?> href="<?=$arItem["LINK"]?>"><?=$arItem['TEXT']?></a></li>
-	<?php else:?>
-		<li><a class="text-gray-600 hover:text-orange" <?=$arItem['PARAMS']['COLOR'] ? 'style="color: ' . $arItem['PARAMS']['COLOR'] . '"' : ''?> href="<?=$arItem["LINK"]?>"><?=$arItem['TEXT']?></a></li>
-	<?php endif?>
+    <li>
+    	<a href="<?=$arItem["LINK"]?>" <?=$arItem["SELECTED"] ? 'class="text-orange cursor-default"' : 'class="text-gray-600 hover:text-orange"'?> <?=$arItem['PARAMS']['COLOR'] ? 'style="color: ' . $arItem['PARAMS']['COLOR'] . '"' : ''?>>
+    		<?=$arItem["TEXT"]?>	
+    	</a>
+    </li>
 	
 <?php endforeach?>
 

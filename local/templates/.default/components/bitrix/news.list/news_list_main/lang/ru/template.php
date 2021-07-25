@@ -1,4 +1,4 @@
 <?
-$MESS['NEWS'] = 'Новости';
-$MESS['ALL_NEWS'] = 'Все';
+$MESS['NEWS_TITLE'] = 'Новости';
+$MESS['ALL_LINKS'] = 'Все';
 ?>

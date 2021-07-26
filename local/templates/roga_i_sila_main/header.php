@@ -15,6 +15,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/jquery-3.6.0.js');
 $asset->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/slick.js');
 $asset->addJs(SITE_TEMPLATE_PATH . '/assets/js/script.js');
 
+
 ?>
 <!doctype html>
 <html class="antialiased" lang="ru">

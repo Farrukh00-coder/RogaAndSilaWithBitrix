@@ -8,14 +8,12 @@ $asset = Asset::getInstance();
 $asset->addCss(SITE_DEFAULT_PATH . '/assets/css/form.css');
 $asset->addCss(SITE_DEFAULT_PATH . '/assets/css/tailwind.css');
 $asset->addCss(SITE_DEFAULT_PATH . '/assets/css/base.css');
-$asset->addCss(SITE_DEFAULT_PATH . '/assets/css/main_page_template_styles.css');
+$asset->addCss(SITE_DEFAULT_PATH . '/assets/css/inner_page_template_styles.css');
 $asset->addCss(SITE_DEFAULT_PATH . '/assets/js/vendor/slick.css');
 
 $asset->addJs(SITE_DEFAULT_PATH . '/assets/js/vendor/jquery-3.6.0.js');
 $asset->addJs(SITE_DEFAULT_PATH . '/assets/js/vendor/slick.js');
 $asset->addJs(SITE_DEFAULT_PATH . '/assets/js/script.js');
-
-
 ?>
 <!doctype html>
 <html class="antialiased" lang="ru">
@@ -31,9 +29,9 @@ $asset->addJs(SITE_DEFAULT_PATH . '/assets/js/script.js');
         <div class="border-b">
             <div class="container mx-auto block sm:flex sm:justify-between sm:items-center py-4 px-4 sm:px-0 space-y-4 sm:space-y-0">
                 <div class="flex justify-center">
-                    <span class="inline-block sm:inline">
+                    <a href="/" class="inline-block sm:inline hover:opacity-75">
                         <img src="<?=SITE_DEFAULT_PATH?>/assets/images/logo.png" width="222" height="30" alt="">
-                    </span>
+                    </a>
                 </div>
                 <div>
                     <ul class="flex justify-center sm:justify-end items-center space-x-8 text-sm">
@@ -108,4 +106,31 @@ $asset->addJs(SITE_DEFAULT_PATH . '/assets/js/script.js');
             </div>
         </div>
     </header>
-    <main class="flex-1 container mx-auto bg-white">
+    <nav class="container mx-auto bg-gray-100 py-1 px-4 text-sm flex items-center space-x-2">
+        <a class="hover:text-orange" href="index.html">Главная</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 w-3 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+        </svg>
+        <span>Легковые</span>
+    </nav>
+    <main class="flex-1 container mx-auto bg-white flex">
+
+        <div class="flex-1 grid grid-cols-4 lg:grid-cols-5 border-b">
+            <aside class="hidden sm:block col-span-1 border-r p-4">
+                <nav>
+                    <ul class="text-sm">
+                        <li>
+                            <p class="text-xl text-black font-bold mb-4">Информация</p>
+                            <ul class="space-y-2">
+                                <li><a class="hover:text-orange" href="inner.html">О компании</a></li>
+                                <li><a class="text-orange cursor-default" href="inner.html">Контактная информация</a></li>
+                                <li><a class="hover:text-orange" href="inner.html">Условия продаж</a></li>
+                                <li><a class="hover:text-orange" href="inner.html">Финансовый отдел</a></li>
+                                <li><a class="hover:text-orange" href="inner.html">Для клиентов</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="col-span-4 sm:col-span-3 lg:col-span-4 p-4">
+                <h1 class="text-black text-3xl font-bold mb-4"><?php $APPLICATION->ShowTitle()?></h1>

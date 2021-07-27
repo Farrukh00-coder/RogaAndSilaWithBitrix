@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Рога и Сила - главная страница");
-?><?$APPLICATION->IncludeComponent("bitrix:menu", "menu_footer", Array(
+?><?$APPLICATION->IncludeComponent("bitrix:menu", "menu_left", Array(
 	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
 		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
 		"DELAY" => "N",	// Откладывать выполнение шаблона меню

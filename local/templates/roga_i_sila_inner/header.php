@@ -117,20 +117,22 @@ $asset->addJs(SITE_DEFAULT_PATH . '/assets/js/script.js');
 
         <div class="flex-1 grid grid-cols-4 lg:grid-cols-5 border-b">
             <aside class="hidden sm:block col-span-1 border-r p-4">
-                <nav>
-                    <ul class="text-sm">
-                        <li>
-                            <p class="text-xl text-black font-bold mb-4">Информация</p>
-                            <ul class="space-y-2">
-                                <li><a class="hover:text-orange" href="inner.html">О компании</a></li>
-                                <li><a class="text-orange cursor-default" href="inner.html">Контактная информация</a></li>
-                                <li><a class="hover:text-orange" href="inner.html">Условия продаж</a></li>
-                                <li><a class="hover:text-orange" href="inner.html">Финансовый отдел</a></li>
-                                <li><a class="hover:text-orange" href="inner.html">Для клиентов</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "menu_left", Array(
+                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
+                        "DELAY" => "N", // Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "1", // Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array( // Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "A",   // Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y", // Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "bottom",   // Тип меню для первого уровня
+                        "USE_EXT" => "N",   // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    ),
+                    false
+                );?>
             </aside>
             <div class="col-span-4 sm:col-span-3 lg:col-span-4 p-4">
                 <h1 class="text-black text-3xl font-bold mb-4"><?php $APPLICATION->ShowTitle()?></h1>

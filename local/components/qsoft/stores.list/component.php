@@ -40,20 +40,23 @@ if ($this->StartResultCache(false)) {
     $arImg = [];
     while ($res = $rsIBlockElement->GetNext()) {
     	$arResult['ITEMS'][] = $res;
-    	$arImg[] = $res['PREVIEW_PICTURE'];
+        if (! empty($res['PREVIEW_PICTURE'])) {
+    	   $arImg[] = $res['PREVIEW_PICTURE'];
+        }
     }
 
-    $rsImg = CFile::GetList([], ["@ID" => implode(",", $arImg)]);
-    while ($res = $rsImg->GetNext()) {
-    	$path = CFile::GetPath($res['ID']);
-    	
-    	foreach ($arResult['ITEMS'] as &$arItem) {
-    		if (! strcmp($arItem['PREVIEW_PICTURE'], $res['ID'])) {
-    			$arItem['PREVIEW_PICTURE'] = $path;
-    		}
-    	}
-   	}
-
+    if (! empty($arImg)) {
+        $rsImg = CFile::GetList([], ["@ID" => implode(",", $arImg)]);
+        while ($res = $rsImg->GetNext()) {
+        	$path = CFile::GetFileSRC($res);
+        	
+        	foreach ($arResult['ITEMS'] as &$arItem) {
+        		if (! strcmp($arItem['PREVIEW_PICTURE'], $res['ID'])) {
+        			$arItem['PREVIEW_PICTURE'] = $path;
+        		}
+        	}
+   	    }
+    }
    	$this->SetResultCacheKeys([]);
    	$this->IncludeComponentTemplate();
 }

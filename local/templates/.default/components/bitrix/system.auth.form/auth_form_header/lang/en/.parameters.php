@@ -1,0 +1,3 @@
+<?php
+$MESS['PROFILE'] = 'Personal';
+?>

@@ -12,6 +12,6 @@ class SendEmail
     		'EMAIL_TO' => $arUser["user_fields"]["EMAIL"],
     		'AUTH_DATE' => date('Y.m.d H:i:s'),
     	];
-    	CEvent::Send("AUTHORIZED_USER_SEND_MESSAGE", 's1', $arEventFields, "N");
+    	CEvent::Send("ON_USER_AUTHORIZE", SITE_ID, $arEventFields, "N");
     }
 }

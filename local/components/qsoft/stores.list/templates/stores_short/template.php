@@ -15,19 +15,17 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 <?php foreach ($arResult['ITEMS'] as $arItem) {?>
         <div class="w-full flex">
             <div class="h-48 lg:h-auto w-32 xl:w-48 flex-none text-center rounded-lg overflow-hidden">
-            	<img src="<?=$arItem['PREVIEW_PICTURE'] ?? NO_IMAGE_PATH?>" class="w-full h-full object-cover" alt="">
-                <!-- <a class="block w-full h-full hover:opacity-75" href="salons.html"><img src="<?=SITE_DEFAULT_PATH?>/assets/pictures/test_salon_1.jpg" class="w-full h-full object-cover" alt=""></a> -->
+                <a class="block w-full h-full hover:opacity-75" href="salons.html"><img src="<?=$arItem['PREVIEW_PICTURE'] ?? NO_IMAGE_PATH?>" class="w-full h-full object-cover" alt=""></a>
             </div>
             <div class="px-4 flex flex-col justify-between leading-normal">
                 <div class="mb-8">
                     <div class="text-black font-bold text-xl mb-2">
-                    	<p><?=$arItem['NAME']?></p>
-                        <!-- <a class="hover:text-orange" href="salons.html">Салон на братиславской</a> -->
+                        <a class="hover:text-orange" href="salons.html"><?=$arItem['NAME']?></a>
                     </div>
                     <div class="text-base space-y-2">
                         <p class="text-gray-400"><?=$arItem['PROPERTY_ADDRESS_VALUE']?></p>
                         <p class="text-black"><?=$arItem['PROPERTY_PHONE_VALUE']?></p>
-                        <p class="text-sm">Часы работы:<br> <?=$arItem['PROPERTY_WORK_HOURS_VALUE']?></p>
+                        <p class="text-sm"><?=GetMessage('WORK_TIME')?><br> <?=$arItem['PROPERTY_WORK_HOURS_VALUE']?></p>
                     </div>
                 </div>
             </div>

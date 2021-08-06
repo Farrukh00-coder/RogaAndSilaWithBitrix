@@ -79,6 +79,12 @@ $arComponentParameters = [
             'TYPE' => 'STRING',
             'DEFAULT' => '',
         ],
+        'SHOW_MAP' => [
+            'PARENT' => 'BASE',
+            'NAME' => GetMessage('SHOW_MAP'),
+            'TYPE' => 'CHECKBOX',
+            'DEFAULT' => 'N',
+        ],
         'CACHE_TIME' => [
             'DEFAULT' => 3600,
         ],

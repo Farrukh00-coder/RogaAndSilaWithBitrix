@@ -26,6 +26,7 @@ class Salons extends CBitrixComponent
 
 	public function executeComponent()
 	{
+		global $APPLICATION, $USER, $INTRANET_TOOLBAR;
 		if ($this->StartResultCache()) {
 
 			if (! CModule::IncludeModule('iblock')) {
@@ -76,7 +77,6 @@ class Salons extends CBitrixComponent
                     0,
                     array("SECTION_BUTTONS" => false, "SESSID" => false)
                 );
-                $res["ADD_LINK"] = $arButtons["edit"]["add_element"]["ACTION_URL"];
                 $res["EDIT_LINK"] = $arButtons["edit"]["edit_element"]["ACTION_URL"];
                 $res["DELETE_LINK"] = $arButtons["edit"]["delete_element"]["ACTION_URL"];
                 
@@ -115,6 +115,17 @@ class Salons extends CBitrixComponent
     		$this->SetResultCacheKeys($arKeysForCache);
    			$this->IncludeComponentTemplate();
 		}
+
+
+		if($USER->IsAuthorized() && $APPLICATION->GetShowIncludeAreas() && CModule::includeModule("iblock")) {
+    	    $arButtons = CIBlock::GetPanelButtons(
+    	        $this->arParams["IBLOCK_ID"],
+    	        0,
+    	        0,
+    	        ["SECTION_BUTTONS" => false, "SESSID" => false]
+    	    );
+    	    $this->addIncludeAreaIcons(CIBlock::GetComponentMenu($APPLICATION->GetPublicShowMode(), $arButtons));
+    	}
 
 		return $this->arResult;
 	}

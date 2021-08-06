@@ -6,7 +6,6 @@ if (! defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true ) die();
     <div class="grid gap-6 grid-cols-1">
 <?php foreach ($arResult["ITEMS"] as $arItem) { ?>
 <?php
-$this->AddEditAction($arItem["ID"], $arItem["ADD_LINK"], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_ADD"));
 $this->AddEditAction($arItem["ID"], $arItem["EDIT_LINK"], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
 $this->AddDeleteAction($arItem["ID"], $arItem["EDIT_LINK"], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"));
 ?>

@@ -1,6 +1,6 @@
-<?php
+<?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Новости");
+$APPLICATION->SetTitle("");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news",
 	"news",
@@ -74,4 +74,3 @@ $APPLICATION->SetTitle("Новости");
 		"USE_SHARE" => "N"
 	)
 );?>
-<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

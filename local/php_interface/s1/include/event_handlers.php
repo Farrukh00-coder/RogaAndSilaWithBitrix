@@ -5,7 +5,7 @@ AddEventHandler("main", "OnAfterUserAuthorize", Array("SendEmail", "OnAfterUserA
 class SendEmail
 {
     // создаем обработчик события "OnAfterUserAuthorize"
-    function OnAfterUserAuthorizeHandler($arUser)
+    public static function OnAfterUserAuthorizeHandler($arUser)
     {
     	$arEventFields = [
     		'LOGIN' => $arUser["user_fields"]["LOGIN"],

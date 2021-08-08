@@ -13,4 +13,5 @@ $MESS['NAME'] = 'Name';
 $MESS['ACTIVE_FROM'] = 'ACTIVE_FROM';
 $MESS['SORT'] = 'Sort';
 $MESS['TIMESTAMP_X'] = 'TIMESTAMP_X';
+$MESS['SHOW_MAP'] = 'Show Map';
 ?>

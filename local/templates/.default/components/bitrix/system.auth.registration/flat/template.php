@@ -132,7 +132,7 @@ document.getElementById('bx_auth_secure_conf').style.display = '';
 		<div class="bx-authform-formgroup-container">
 			<div class="bx-authform-label-container"><?if($arResult["EMAIL_REQUIRED"]):?><span class="bx-authform-starrequired">*</span><?endif?><?=GetMessage("AUTH_EMAIL")?></div>
 			<div class="bx-authform-input-container">
-				<input type="text" name="USER_EMAIL" maxlength="255" value="<?=$arResult["USER_EMAIL"]?>" placeholder="name@site.domain" />
+				<input type="text" name="USER_EMAIL" maxlength="255" value="<?=$arResult["USER_EMAIL"]?>" placeholder="<?=GetMessage('AUTH_EMAIL_PLACEHOLDER')?>" />
 			</div>
 		</div>
 <?endif?>

@@ -19,4 +19,5 @@ $MESS['CAPTCHA'] = 'CAPTCHA';
 $MESS['AUTH_LOGIN_REQ'] = 'Login';
 $MESS['PASSWORD_REQUIREMENTS'] = 'Пароль должен быть не менее 6 символов';
 $MESS['PASS_PLACEHOLDER'] = '*********';
+$MESS['AUTH_EMAIL_PLACEHOLDER'] = 'name@site.domain';
 ?>

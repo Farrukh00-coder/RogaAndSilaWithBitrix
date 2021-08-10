@@ -1,16 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/local/templates/.default/include/header.php');
 ?>
-
-    <?$APPLICATION->IncludeComponent(
-        "bitrix:breadcrumb",
-        "breadcrumbs_qsoft",
-        Array(
-            "PATH" => "",
-            "SITE_ID" => "s1",
-            "START_FROM" => "0"
-        )
-    );?>
     
     <main class="flex-1 container mx-auto bg-white flex">
 

@@ -82,3 +82,13 @@ $asset->addJs(SITE_DEFAULT_PATH . '/assets/js/script.js');
             </div>
         </div>
     </header>
+
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:breadcrumb",
+        "breadcrumbs_qsoft",
+        Array(
+            "PATH" => "",
+            "SITE_ID" => "s1",
+            "START_FROM" => "0"
+        )
+    );?>

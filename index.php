@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("Рога и Сила - главная страница");
 ?>
 		<section class="bg-white">
